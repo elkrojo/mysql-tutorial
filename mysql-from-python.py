@@ -5,8 +5,9 @@ import pymysql
 # username = os.getenv('')
 
 # Connect to the database
-connection = pymysql.connect(host='localhost',
-                             user='user',
+connection = pymysql.connect(
+                             user='root',
+                             password='',
                              db='Chinook')
 
 try:
@@ -17,5 +18,5 @@ try:
         result = cursor.fetchall()
         print(result)
 finally:
-    # Close teh connection, regardless of whether the above was successful
+    # Close the connection, regardless of whether the above was successful
     connection.close()
